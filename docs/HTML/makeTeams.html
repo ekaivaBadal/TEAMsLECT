@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-        <h1>badal ramteke</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/makeTeams.js" defer></script>
+    <title>Make Your Teams</title>
+    
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+       font-family: "Roboto Mono", monospace;
+
+      }
+
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgb(255, 255, 255);
+        border-radius: 100px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 flex justify-center text-white backdrop-blur-3xl"
+  >
+    <div id="main" class="lg:w-[1224px] w-full h-full px-5">
+      <section class="h-[45%]">
+        <i class="ri-team-fill ri-3x h-[4rem] hover:-translate-y-2 hover:-translate-x-2 transition duration-500 animate-pulse self-center  z-10 invisible lg:visible absolute"></i>
+        
+        <div id="addingPlayersName" class="flex flex-col items-center lg:items-none">
+          <div id="giveNumber" class="h-10 w-[100%] bg-transparent mt-10   flex flex-col items-center">
+            <form class="checkBox">
+              <label for="" class="flex ">
+                <pre>Give Them Numbers : </pre>
+                <input type="checkbox" name="" id="" class="w-10  accent-slate-900 ">
+              </label>
+            </form>
+            
+            <h3>|OR|</h3>
+          </div>
+          <br/>
+          <form class="form">
+            
+            <div
+              class="flex items-center bg-slate-900 pl-6  text-white lg:w-[100%] rounded-full backdrop-blur-3xl justify-between   "
+            >
+              <input
+                class="flex-1 appearance-none placeholder-white bg-transparent border-none w-full py-1 px-2 leading-tight focus:outline-none"
+                type="text"
+                placeholder="Add Player Names"
+                id="nameInput"
+              />
+              <button
+                class="px-12 bg-slate-950 py-3 rounded-full pointer-events-auto"
+                type="submit"
+                id="addBtn"
+              >
+              
+                Add
+              </button>
+            </div>
+          </form>
+          <div
+            class="w-[75%] h-72 lg:h-40 bg-gradient-to-t from-slate-700 via-slate-800 to-slate-950 rounded-2xl border mt-5 lg:w-[35%] overflow-auto overflow-x-hidden  shadow-2xl  shadow-slate-950 backdrop-blur-3xl   "
+          >
+            <ul class="namesList flex flex-col items-center">
+            </ul>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </body>
 </html>

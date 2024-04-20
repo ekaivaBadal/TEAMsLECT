@@ -18,5 +18,6 @@ btn.forEach((b ,i) => {
     })
 })
 }
-
 toOtherPages()    
+
+

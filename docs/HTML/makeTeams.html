@@ -7,13 +7,12 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../output.css">
     <script src="../js/makeTeams.js" defer></script>
     <title>Make Your Teams</title>
-    
-    
+
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
       * {
         margin: 0;
         padding: 0;
@@ -23,8 +22,7 @@
       body {
         height: 100%;
         width: 100%;
-       font-family: "Roboto Mono", monospace;
-
+        font-family: "Roboto Mono", monospace;
       }
 
       ::-webkit-scrollbar {
@@ -35,6 +33,12 @@
         background: rgb(255, 255, 255);
         border-radius: 100px;
       }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }  
     </style>
   </head>
   <body
@@ -42,24 +46,36 @@
   >
     <div id="main" class="lg:w-[1224px] w-full h-full px-5">
       <section class="h-[45%]">
-        <i class="ri-team-fill ri-3x h-[4rem] hover:-translate-y-2 hover:-translate-x-2 transition duration-500 animate-pulse self-center  z-10 invisible lg:visible absolute"></i>
-        
-        <div id="addingPlayersName" class="flex flex-col items-center lg:items-none">
-          <div id="giveNumber" class="h-10 w-[100%] bg-transparent mt-10   flex flex-col items-center">
+        <i
+          class="ri-team-fill ri-3x h-[4rem] hover:-translate-y-2 hover:-translate-x-2 transition duration-500 animate-pulse self-center z-10 invisible lg:visible absolute"
+        ></i>
+
+        <div
+          id="addingPlayersName"
+          class="flex flex-col items-center lg:items-none"
+        >
+          <div
+            id="giveNumber"
+            class="h-10 w-[100%] bg-transparent mt-10 flex flex-col items-center"
+          >
             <form class="checkBox">
-              <label for="" class="flex ">
+              <label for="" class="flex">
                 <pre>Give Them Numbers : </pre>
-                <input type="checkbox" name="" id="" class="w-10  accent-slate-900 ">
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  class="w-10 accent-slate-900"
+                />
               </label>
             </form>
-            
-            <h3>|OR|</h3>
+
+            <h3 class="orHide">|OR|</h3>
           </div>
-          <br/>
+          <br />
           <form class="form">
-            
             <div
-              class="flex items-center bg-slate-900 pl-6  text-white lg:w-[100%] rounded-full backdrop-blur-3xl justify-between   "
+              class="flex items-center bg-slate-900 pl-6 text-white lg:w-[100%] rounded-full backdrop-blur-3xl justify-between border-b border-black  border-t"
             >
               <input
                 class="flex-1 appearance-none placeholder-white bg-transparent border-none w-full py-1 px-2 leading-tight focus:outline-none"
@@ -72,19 +88,47 @@
                 type="submit"
                 id="addBtn"
               >
-              
                 Add
               </button>
             </div>
           </form>
           <div
-            class="w-[75%] h-72 lg:h-40 bg-gradient-to-t from-slate-700 via-slate-800 to-slate-950 rounded-2xl border mt-5 lg:w-[35%] overflow-auto overflow-x-hidden  shadow-2xl  shadow-slate-950 backdrop-blur-3xl   "
+            class="playersNameBox w-[75%] h-60 lg:h-40 text-xs bg-gradient-to-t from-slate-700 via-slate-800 to-slate-950 rounded-2xl border mt-5 lg:w-[35%] overflow-auto overflow-x-hidden shadow-xl shadow-slate-950 backdrop-blur-3xl"
           >
-            <ul class="namesList flex flex-col items-center">
-            </ul>
+            <ul class="namesList flex flex-col items-center"></ul>
+          </div> 
+        </div>
+        <h2 class="text-2xl lg:text-3xl bg-gradient-to-b from-slate-100 via-slate-300 to-slate-500 bg-clip-text text-transparent font-extrabold text-center mt-10">Details</h2>
+        <div id="details" class="w-full h-1/2">
+          <div class="totalPlayers w-full h-[10%] mt-10 flex justify-center">
+            <form>
+              <label class="flex">
+                <p>Total Players : </p>
+                <input type="number" name="" id="" class="text-black w-10 rounded-md outline-none  px-2 " min="1" max="20" value="0"/>
+              </label>
+            </form>
+          </div>
+
+          <div class="totalPlayers w-full h-[10%] mt-10 flex justify-center">
+            <form>
+              <label class="flex">
+                <p>Total Teams : </p>
+                <input type="number" name="" id="" class="text-black w-10 rounded-md outline-none  px-2 " min="1" max="20" value="0"/>
+              </label>
+            </form>
           </div>
         </div>
-
+          <h3 class="advanceHeading text-center text-2xl cursor-pointer animate-pulse">Advance <span ><i class="ri-arrow-right-circle-fill ri-xl"></i></span></h3>
+        <div id="advancedSettings" class="bg-slate-950 w-full h-1/2 lg:w-1/2 lg:transform lg:left-1/2 lg:translate-x-1/2 hidden">
+          <!-- <i class="ri-arrow-down-circle-fill ri-xl downArrow"></i> -->
+          <div class="teamNames"></div>
+          <div class="giveCaptainsToTeams"></div>
+          <div class="giveViceCapToTeams"></div>
+          <div class="giveThemRoles">
+            <div class="forCricket"></div>
+            <div class="forFootball"></div>
+          </div>
+        </div>
       </section>
     </div>
   </body>

@@ -129,24 +129,21 @@ function getYourTeams() {
 
   btn.addEventListener("click", function (e) {
     e.preventDefault();
-    if (names.length === 0) {
-      alert("Please add names");
-    } else if (names.length < 2) {
+    if (names.length === 0 || names.length < 2) {
       alert("Please add more Than one name");
-    } else {
+    }else {
       if (typeof number === 'number' && !Number.isInteger(number)) {
         const totalPlayers = names.length;
         names.sort(() => Math.random() - 0.5);
         let divide = names.length / 2;
         let team1 = names.splice(1, divide);
+        Array.of(team1)
         let commonPlayer = names.pop();
         let team2 = names;
-        console.log(`team1 = ${team1}`);
-        console.log(`team2 = ${team2}`);
+        console.log(team1);
+        console.log(team2);
         console.log(commonPlayer);   
-        team1 = [];
-        team2 = [];
-        commonPlayer = []
+    
       }else{
         const totalPlayers = names.length;
         names.sort(() => Math.random() - 0.5);
